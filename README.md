@@ -1,11 +1,10 @@
 ### Announcement 
-Due to personal health I will no longer be able to maintain this project. It has been fun and hearing feedback from a bunch of you has helped me maintain it, but I will be stopping here. If someone is interested in continuing to maintain this, you can reach out to me on discord and I'll add a link here to refer to your repo.
-
+Due to personal health the old owner will no longer be able to maintain this project. However, for the time being, I’m gonna try to maintain this. The original repository I forked from is https://github.com/Jontte6/nim-to-openai-proxy 
 
 
 ### If you forked before June 7, 2026, please pull the latest version — previous versions had an auth bypass and startup DDoS vulnerability.
 
-### Guys. Just don't use reasoning at this point. There's not a single standard that nim follows that I could make use of. The reasoning on one model works, then I fix it for the other and the first breaks.
+### Guys. Just don't use reasoning at this point. There's not a single standard that nim follows that I could make use of. The reasoning on one model works, then I fix it for the other and the first breaks. I’ll try to see if I can fix it but don’t count on it.
 
 
 ### NVIDIA NIM to OpenAI Proxy
@@ -14,7 +13,7 @@ These are the current available models for usage, and the use cases for all of t
 
 ### Why use this proxy?
 
-JanitorAI requires an OpenAI-compatible proxy to use NVIDIA NIM. SillyTavern can connect to NIM directly, but if you use **Lorebary** for prompts, lorebooks, or plugins, this proxy is necessary — Lorebary does not support NIM natively.
+JanitorAI requires an OpenAI-compatible proxy to use NVIDIA NIM. SillyTavern can connect to NIM directly, but if you use **Lorebary** for prompts, lorebooks, or plugins, this proxy is necessary — Lorebary does not support NIM natively. Various other frontends for coding and other things also may bug with NIM.
 
 ### Legality
 
@@ -44,7 +43,7 @@ Node.js 24+, a NVAPI/Nim API key, a deployment platform (though if you follow th
 | `mistral-nemo` | `mistralai/mistral-nemotron` | Casual/anime RP | Fast | Low |
 | `claude-3-opus` | `openai/gpt-oss-120b` | Alternative to Chinese models | Medium | Low-Medium |
 | `claude-3-sonnet` | `openai/gpt-oss-20b` | Fast, distinct voice | Fast | Low-Medium |
-| `glm-5.2` | `z-ai/glm-5.2` | General purpose | Medium | Medium |
+| `glm-5.2` | `z-ai/glm-5.2` | General purpose & Coding | Medium | Medium |
 | `gpt-3.5-turbo` | `nvidia/nemotron-3-super-120b-a12b` | Lightweight tasks | Fast | Low |
 | `gpt-3.5` | `qwen/qwen3.5-397b-a17b` | Qwen fallback | Medium | Medium |
 | `google-light` | `google/gemma-4-31b-it` | Short scenes, fast | Fast | Low-Medium |
@@ -83,13 +82,13 @@ You can easily generate the hash with an online SHA-256 generator or any hash to
 
 Firstly head to https://build.nvidia.com/ and login/create an account. Then click your profile icon and navigate to "API keys". There you can generate an API key, and label it whatever you want. Save it immediately — you'll need to regenerate it if lost.
 
-You *can* use basically any service that allows cloud deployments/VMs with a static IP, but I recommend Railway, Render, and Vercel. Possibly Oracle if you are comfortable with SSH and value the freedom it gives, but Railway is the easiest to setup.
+You *can* use basically any service that allows cloud deployments/VMs with a static IP, but I recommend Railway, Render, and Vercel (which I personally use). Possibly Oracle if you are comfortable with SSH and value the freedom it gives, but Railway is the easiest to setup.
 You need to login to Railway with your Github. **Fork the repo before deploying. I cannot see your env vars, but forking ensures your deployment is fully isolated!** This prevents me (or anyone) from seeing your deployment in Railway's dashboard or through github. I also recommend making sure deployments aren't visible on the frontpage.
 After you have made a deployment, you need to wait around 3 minutes for it to finish deploying. Then go into the "variables" tab, and create an env var with the name "NIM_API_KEY", and enter your NVAPI key into the variable. Next in your deployment go to the settings page, and there the networking section. Generate a public URL for your deployment. This is necessary to access it. Now your proxy is ready.
 
 ### Important Information
 You can check the status of your proxy with the "/health" endpoint, and a list of models with "/v1/models". These endpoints intentionally do not require the auth, so clients can verify connectivity before configuring auth.
-Your actual chat endpoint is in "/v1/chat/completions", and is the one you use in Janitor AI/SillyTavern or whatever platform you use.
+Your actual chat endpoint is in "/v1/chat/completions", and is the one you use in whatever platform
 The client never sees your NVAPI key, which is why we don't use it as the auth, since the whole point of the auth configuration is so that your NVAPI key is not stored on your client.
 
 ### Optional Environment Variables
@@ -134,7 +133,7 @@ This is a personal hobby project I built for my own use, but I'm happy if it hel
 
 ## Issues
 
-Before opening an issue, check if it's already covered in the [Troubleshooting](#troubleshooting) section. If a model stopped working, it's probably deprecated by NVIDIA — check the [NIM catalog](https://build.nvidia.com/) first.
+Before opening an issue, check if it's already covered in the [Troubleshooting](#troubleshooting) section. If a model stopped working, it's probably deprecated by NVIDIA — check the [NIM catalog](https://build.nvidia.com/) first and please contact me on discord to inform me.
 
 When reporting bugs, include:
 - Which model alias you were using
@@ -143,7 +142,7 @@ When reporting bugs, include:
 - Your deployment platform (Railway, Render, etc.)
 
 ## Contact
-Need to reach out faster? Add me on discord `Jonttex`.
+Need to reach out faster? Add me on discord (Username - Skywalker_1401)
 
 ## Disclaimer
 
