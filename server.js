@@ -61,6 +61,8 @@ const MODEL_MAPPING = {
   'gpt-4-flash': 'deepseek-ai/deepseek-v4-flash',
   'nvidia/z-ai/glm-5.2': 'glm-5.2',
   'z-ai/glm-5.2': 'nvidia/z-ai/glm-5.2',
+  'glm-5.2': 'nvidia/z-ai/glm-5.2',
+  'glm-5.2': 'z-ai/glm-5.2',
   'mistral': 'mistralai/mistral-large-3-675b-instruct-2512',
   'mistral-turbo': 'mistralai/mistral-medium-3.5-128b',
   'mistral-pro': 'mistralai/mistral-small-4-119b-2603',
