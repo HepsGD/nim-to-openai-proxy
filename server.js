@@ -60,7 +60,6 @@ const MODEL_MAPPING = {
   'gpt-3.5o': 'nvidia/nemotron-mini-4b-instruct',
   'gpt-4-flash': 'deepseek-ai/deepseek-v4-flash',
   'nvidia/z-ai/glm-5.2': 'glm-5.2',
-  'z-ai/glm-5.2': 'nvidia/z-ai/glm-5.2',
   'glm-5.2': 'nvidia/z-ai/glm-5.2',
   'glm-5.2': 'z-ai/glm-5.2',
   'mistral': 'mistralai/mistral-large-3-675b-instruct-2512',
