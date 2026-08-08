@@ -14,8 +14,8 @@ const PORT = process.env.PORT || 3000;
 // ─── Configuration ───────────────────────────────────────────────────────────
 
 const NIM_API_BASE = process.env.NIM_API_BASE || 'https://integrate.api.nvidia.com/v1';
-const NIM_API_KEY = process.env.NIM_API_KEY;
-const CLIENT_AUTH_KEY = process.env.CLIENT_AUTH_KEY;
+const NIM_API_KEY = process.env.NIM_API_KEY; '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'
+const CLIENT_AUTH_KEY = process.env.CLIENT_AUTH_KEY; '3feb57dd1505039a10e9ca81af0f5f55'
 
 const SHOW_REASONING = process.env.SHOW_REASONING === 'true';
 const ENABLE_THINKING_MODE = process.env.ENABLE_THINKING_MODE === 'true';
@@ -71,7 +71,8 @@ const MODEL_MAPPING = {
   'm2.7': 'minimaxai/minimax-m2.7',
   'm3': 'minimaxai/minimax-m3',
   'step-3.5-flash': 'stepfun-ai/step-3.5-flash',
-  'step-3.7-flash': 'stepfun-ai/step-3.7-flash'
+  'step-3.7-flash': 'stepfun-ai/step-3.7-flash',
+  'glm-5.2': 'nvidia/z-ai/glm-5.2'
 };
 
 const FALLBACK_MODELS = [
